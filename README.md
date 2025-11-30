@@ -26,6 +26,3 @@ I have used this template as the basis for my own thesis, making extensive modif
 This template is licensed under **Creative Commons CC BY 4.0**.  
 You are free to use, modify, and share this template for your own educational purposes, as long as proper credit is given.
 
----
-
-**Note:** This template is intended for educational purposes only. Please remove any personal data before sharing publicly.
