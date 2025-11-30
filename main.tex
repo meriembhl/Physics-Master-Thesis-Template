@@ -1,0 +1,65 @@
+% Adapted from a template created by Dr. Yacine Bouali (USTHB).
+% Original available at: https://www.overleaf.com/latex/templates/usthb-thesis/jwbcnbcgrkdq
+%This version has been adapted and extensively modified  for this work.
+% Meriem Bahloul
+% Master's  in Materials Physics
+% Faculty of Sciences and Technology,Saida University
+%% e-mail: %% meriiembahloul@gmail.com %% 
+%% https://github.com/meriembhl
+% Linkedin: www.linkedin.com/in/bahloulmeriem
+
+
+\immediate\write18{makeindex \jobname.nlo -s nomencl.ist -o \jobname.nls} % Use this line to generate auto Nomenclature
+\documentclass[12pt,a4paper,oneside]{report}
+\input{Preamble/Preamble}
+\begin{document}
+	%% frontmatter
+	\pagenumbering{gobble}	
+	\include{1-Titlepage/Titlepage}
+	\include{2-Dedication/dedication}
+	\pagestyle{empty}
+	\include{3-Acknowledgment/Acknowledgment}
+	\include{4-Abstract/Abstract}
+	\pagestyle{fancy}
+	\tableofcontents
+	\clearpage
+	\newpage
+	
+	\pagenumbering{roman}
+	\cleardoublepage
+	\listoffigures
+	\cleardoublepage
+	\listoftables
+	\cleardoublepage  
+	\markboth{\MakeUppercase\nomname}{\MakeUppercase\nomname}
+	\printnomenclature
+	\clearpage
+	\newpage
+	
+	%% mainmatter
+	\pagenumbering{arabic}	
+	\include{5-Abbreviations/Abbreviations}
+    \include{6-Introduction/Introduction}
+	\include{7-Chapters/Chapter1/Chapter1}
+	\include{7-Chapters/Chapter2/Chapter2}
+	\include{7-Chapters/Chapter3/Chapter3}
+	\include{8-Conclusion/Conclusion}
+	\bibliographystyle{unsrt}
+	\bibliography{bibliography}
+	\clearpage
+	\newpage
+	
+	%% backmatter	
+	\pagenumbering{Alph}
+	\begin{appendices}
+	%% Appendix Configuration
+	\renewcommand{\thechapter}{\Alph{chapter}}
+	\renewcommand{\thesection}{\thechapter.\arabic{section}}
+	\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+	\renewcommand\thefigure{\thechapter.\arabic{figure}} 
+	\renewcommand\thetable{\thechapter.\arabic{table}}	
+	%% Add Appendix
+	\include{9-Appendix/Appendix1/Appendix1}
+	\include{9-Appendix/Appendix2/Appendix2}	
+	\end{appendices}
+\end{document}
